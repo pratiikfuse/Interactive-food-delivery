@@ -162,7 +162,11 @@ searchInput.addEventListener("keyup", (e) => {
       .includes(searchString.toLocaleLowerCase());
   });
   //   console.log(searchedData);
-  loadFoodData(searchedData);
+  if (searchedData.length == 0) {
+    cardsContainer.innerHTML = `<h2 style="text-align:center;color:red;width:100%">No Data Found<h2>`;
+  } else {
+    loadFoodData(searchedData);
+  }
 });
 
 const mobilemenu = document.getElementById("mobile-menu-icon");
