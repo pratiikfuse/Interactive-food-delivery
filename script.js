@@ -56,7 +56,7 @@ function loadFoodData(foodData) {
     title.innerText = data.name;
     let titleRatingChildDiv = document.createElement("div");
     let ratingImage = document.createElement("img");
-    ratingImage.src = "./assets/star.svg";
+    ratingImage.src = "/assets/star.svg";
     let span = document.createElement("span");
     span.innerText = data.rating;
 
@@ -71,7 +71,7 @@ function loadFoodData(foodData) {
     time.innerText = data.time;
     let timeLikesChildDiv = document.createElement("div");
     let likeImage = document.createElement("img");
-    likeImage.src = "./assets/like.svg";
+    likeImage.src = "/assets/like.svg";
     likeImage.addEventListener("click", (e) => {
       callbackisLiked(i, e);
     });
@@ -96,7 +96,7 @@ function loadFoodData(foodData) {
     }
 
     let commentImage = document.createElement("img");
-    commentImage.src = "./assets/comments.svg";
+    commentImage.src = "/assets/comments.svg";
 
     timeLikesChildDiv.append(likeImage, commentImage);
     timeLikes.append(time, timeLikesChildDiv);
