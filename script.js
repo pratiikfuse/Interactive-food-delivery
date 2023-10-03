@@ -23,6 +23,11 @@ loadFoodData(originalData);
 function loadFoodData(foodData) {
   //   console.log(foodData);
   cardsContainer.innerHTML = "";
+  if (foodData.length == 0) {
+    // console.log("not found");
+    cardsContainer.innerHTML = `<h2 style="text-align:center;color:red;width:100%">No Data Found<h2>`;
+    return;
+  }
   for (let i = 0; i < foodData.length; i++) {
     let data = foodData[i];
     // console.log(data);
@@ -51,7 +56,7 @@ function loadFoodData(foodData) {
     title.innerText = data.name;
     let titleRatingChildDiv = document.createElement("div");
     let ratingImage = document.createElement("img");
-    ratingImage.src = "./assets/star.jpg";
+    ratingImage.src = "./assets/Star.jpg";
     let span = document.createElement("span");
     span.innerText = data.rating;
 
@@ -162,11 +167,8 @@ searchInput.addEventListener("keyup", (e) => {
       .includes(searchString.toLocaleLowerCase());
   });
   //   console.log(searchedData);
-  if (searchedData.length == 0) {
-    cardsContainer.innerHTML = `<h2 style="text-align:center;color:red;width:100%">No Data Found<h2>`;
-  } else {
-    loadFoodData(searchedData);
-  }
+
+  loadFoodData(searchedData);
 });
 
 const mobilemenu = document.getElementById("mobile-menu-icon");
