@@ -56,7 +56,7 @@ function loadFoodData(foodData) {
     title.innerText = data.name;
     let titleRatingChildDiv = document.createElement("div");
     let ratingImage = document.createElement("img");
-    ratingImage.src = "./assets/star.jpg";
+    ratingImage.src = "./assets/star.svg";
     let span = document.createElement("span");
     span.innerText = data.rating;
 
